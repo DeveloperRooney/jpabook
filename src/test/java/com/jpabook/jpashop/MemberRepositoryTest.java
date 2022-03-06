@@ -1,5 +1,6 @@
 package com.jpabook.jpashop;
 
+import com.jpabook.jpashop.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class MemberRepositoryTest {
     public void insert() {
         // given
         Member member = new Member();
-        member.setUserName("hancoding");
+        member.setName("hancoding");
 
         // when
         Long savedId = memberRepository.save(member);
