@@ -8,8 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Repository
 @RequiredArgsConstructor
+@Repository
 public class MemberRepository {
 
     private final EntityManager em;
