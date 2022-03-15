@@ -26,8 +26,15 @@ public class OrderRepository {
 
 
     // 동적 쿼리로 검색 기능 생성
-//    public List<Order> findAll(OrderSearch orderSearch) {
-//
-//    }
+    public List<Order> findAll() {
+        return em.createQuery("select o from Order o", Order.class).getResultList();
+    }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery("select o from Order o " +
+                        "join fetch o.member m " +
+                        "join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
 
 }
